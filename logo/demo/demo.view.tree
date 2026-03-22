@@ -1,7 +1,0 @@
-$bog_GPTHub_logo_demo $mol_example_small
-	sub /
-		<= Logo $bog_GPTHub_logo
-	tags /
-		\logo
-	aspects /
-		\UI/Logo

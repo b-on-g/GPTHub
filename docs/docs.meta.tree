@@ -1,4 +1,4 @@
 include \/mol/app/demo
 
-include \/company/template/logo/demo
-include \/company/template/button/demo
+include \/bog/GPTHub/logo/demo
+include \/bog/GPTHub/button/demo

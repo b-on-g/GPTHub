@@ -1,5 +1,6 @@
 $bog_GPTHub_app $mol_book2_catalog
 	menu_title \GPTHub
+	Menu_logo <= Logo2 $bog_GPTHub_logo
 	param \page
 	plugins /
 		<= Theme $mol_theme_auto
@@ -7,9 +8,21 @@ $bog_GPTHub_app $mol_book2_catalog
 		<= Sources $mol_link_source
 			uri \https://github.com/b-on-g/GPTHub
 		<= Lighter $mol_lights_toggle
-	Spread_default <= Page_main $mol_page
-		title \GPTHub
-		body /
-			<= Hello $mol_text text \
-				\# GPTHub
-				\Единое окно для всех ИИ-задач
+	menu_foot /
+		<= Logout_button $bog_GPTHub_button
+			title \Выйти
+	Spread_default 
+		<= Docs $mol_page 
+			body / 
+				<= Docs_uri $mol_link 
+					title \Демонстрации
+					uri \http://localhost:9080/bog/GPTHub/docs/-/test.html
+	spreads *
+		hello <= Page1 $mol_page
+			title \Привет $mol!
+			body /
+				<= Hello $mol_text text \
+					\# Привет https://mol.hyoo.ru/#!section=docs/=6leyma_5ks814]
+					\Инструкция по шаблону читай на https://github.com/b-on-g/GPTHub
+			
+				

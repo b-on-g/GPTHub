@@ -11389,14 +11389,17 @@ var $;
 		block_content(id){
 			return [];
 		}
-		uri_resolve(id){
-			return "";
-		}
 		quote_text(id){
 			return "";
 		}
 		highlight(){
 			return "";
+		}
+		uri_resolve(id){
+			return "";
+		}
+		code_sidebar_showed(){
+			return true;
 		}
 		list_type(id){
 			return "-";
@@ -11415,12 +11418,6 @@ var $;
 		}
 		pre_themes(id){
 			return [];
-		}
-		code_sidebar_showed(){
-			return true;
-		}
-		pre_sidebar_showed(){
-			return (this.code_sidebar_showed());
 		}
 		table_head_cells(id){
 			return [];
@@ -11467,6 +11464,9 @@ var $;
 		Spoiler_label(id){
 			const obj = new this.$.$mol_text();
 			(obj.text) = () => ((this.spoiler_label(id)));
+			(obj.highlight) = () => ((this.highlight()));
+			(obj.uri_resolve) = (id) => ((this.uri_resolve(id)));
+			(obj.code_sidebar_showed) = () => ((this.code_sidebar_showed()));
 			return obj;
 		}
 		spoiler_content(id){
@@ -11475,6 +11475,9 @@ var $;
 		Spoiler_content(id){
 			const obj = new this.$.$mol_text();
 			(obj.text) = () => ((this.spoiler_content(id)));
+			(obj.highlight) = () => ((this.highlight()));
+			(obj.uri_resolve) = (id) => ((this.uri_resolve(id)));
+			(obj.code_sidebar_showed) = () => ((this.code_sidebar_showed()));
 			return obj;
 		}
 		uri_base(){
@@ -11502,18 +11505,20 @@ var $;
 		}
 		Quote(id){
 			const obj = new this.$.$mol_text();
-			(obj.uri_resolve) = (id) => ((this.uri_resolve(id)));
 			(obj.text) = () => ((this.quote_text(id)));
-			(obj.highlight) = () => ((this.highlight()));
 			(obj.auto_scroll) = () => (null);
+			(obj.highlight) = () => ((this.highlight()));
+			(obj.uri_resolve) = (id) => ((this.uri_resolve(id)));
+			(obj.code_sidebar_showed) = () => ((this.code_sidebar_showed()));
 			return obj;
 		}
 		List(id){
 			const obj = new this.$.$mol_text_list();
-			(obj.uri_resolve) = (id) => ((this.uri_resolve(id)));
 			(obj.type) = () => ((this.list_type(id)));
 			(obj.text) = () => ((this.list_text(id)));
 			(obj.highlight) = () => ((this.highlight()));
+			(obj.uri_resolve) = (id) => ((this.uri_resolve(id)));
+			(obj.code_sidebar_showed) = () => ((this.code_sidebar_showed()));
 			return obj;
 		}
 		item_index(id){
@@ -11533,7 +11538,7 @@ var $;
 			(obj.row_themes) = () => ((this.pre_themes(id)));
 			(obj.highlight) = () => ((this.highlight()));
 			(obj.uri_resolve) = (id) => ((this.uri_resolve(id)));
-			(obj.sidebar_showed) = () => ((this.pre_sidebar_showed()));
+			(obj.sidebar_showed) = () => ((this.code_sidebar_showed()));
 			return obj;
 		}
 		Cut(id){
@@ -11555,9 +11560,10 @@ var $;
 		Table_cell(id){
 			const obj = new this.$.$mol_text();
 			(obj.auto_scroll) = () => (null);
+			(obj.text) = () => ((this.table_cell_text(id)));
 			(obj.highlight) = () => ((this.highlight()));
 			(obj.uri_resolve) = (id) => ((this.uri_resolve(id)));
-			(obj.text) = () => ((this.table_cell_text(id)));
+			(obj.code_sidebar_showed) = () => ((this.code_sidebar_showed()));
 			return obj;
 		}
 		Grid(id){
@@ -11573,9 +11579,10 @@ var $;
 		Grid_cell(id){
 			const obj = new this.$.$mol_text();
 			(obj.auto_scroll) = () => (null);
+			(obj.text) = () => ((this.grid_cell_text(id)));
 			(obj.highlight) = () => ((this.highlight()));
 			(obj.uri_resolve) = (id) => ((this.uri_resolve(id)));
-			(obj.text) = () => ((this.grid_cell_text(id)));
+			(obj.code_sidebar_showed) = () => ((this.code_sidebar_showed()));
 			return obj;
 		}
 		String(id){
